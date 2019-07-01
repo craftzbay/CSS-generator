@@ -1,6 +1,6 @@
 .jumbotron{
   color: #fff;
-  height: 500px;
+  height: 400px;
   position: relative;
   background-image: url('../../assets/back.jpg');
   background-size: cover;
@@ -20,4 +20,10 @@
   right: 0;
   bottom: 0;
   z-index: 2;
+}
+.jumbotron-content input{
+  color: #fff;
+}
+.jumbotron-content input[type='radio']{
+  opacity: 0;
 }

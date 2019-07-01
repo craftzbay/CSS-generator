@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class GradientComponent implements OnInit {
   color1 = '#ffffff3a';
   color2 = '#1d2749ff';
+  direction = 'to left';
   constructor() { }
 
   ngOnInit() {

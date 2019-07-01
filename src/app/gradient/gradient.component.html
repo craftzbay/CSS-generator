@@ -1,14 +1,36 @@
 <div class="jumbotron text-center">
     <div class="overlay"
-        [style.background-image]="'linear-gradient(' + 'to right' + ',' + this.color1 + ',' + this.color2 + ')'">
+        [style.background-image]="'linear-gradient(' + this.direction + ',' + this.color1 + ',' + this.color2 + ')'">
 
     </div>
 
     <div class="jumbotron-content">
-        <h1 class="display-5">CSS3 Gradient Generator</h1>
+        <h1 class="display-5 mt-5">CSS3 Gradient Generator</h1>
         <p class="lead">{{color1}} {{color2}}</p>
+        <div class="direction">
+            <div class="container mb-4">
+                <div class="row justify-content-center">
+                    <div class="col-1">
+                        <label for="left"><i class="fa fa-arrow-left"></i></label>
+                        <input type="radio" [(ngModel)]="direction" name="direction" id="left" value="to left">
+                    </div>
+                    <div class="col-1">
+                        <label for="top"><i class="fa fa-arrow-up"></i></label>
+                        <input type="radio" [(ngModel)]="direction" name="direction" id="top" value="to top">
+                    </div>
+                    <div class="col-1">
+                        <label for="bottom"><i class="fa fa-arrow-down"></i></label>
+                        <input type="radio" [(ngModel)]="direction" name="direction" id="bottom" value="to bottom">
+                    </div>
+                    <div class="col-1">
+                        <label for="right"><i class="fa fa-arrow-right"></i></label>
+                        <input type="radio" [(ngModel)]="direction" name="direction" id="right" value="to right">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-md-center">
                 <div class="col col-lg-2">
                     <div class="form-group">
                         <input name="color1" class="form-control" [(colorPicker)]="color1" [style.background]="color1"
@@ -25,15 +47,12 @@
                 </div>
             </div>
         </div>
-        <hr class="my-4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, eaque quis deleniti officia nam quos
-            exercitationem recusandae laborum rem atque delectus non maxime est vel aliquid, neque consequatur corporis
-            ut.
-        </p>
-        <p class="lead">
-            <a href="#" class="btn btn-primary">Learn more</a>
-        </p>
-
     </div>
 
+</div>
+<div class="container">
+    <h3>Css code here:</h3>
+    <pre>
+        background: linear-gradient( {{this.direction}}, {{this.color1}}, {{this.color2}} );
+    </pre>
 </div>
