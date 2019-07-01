@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gradient.component.css']
 })
 export class GradientComponent implements OnInit {
-  color1: string = "red"
+  color1 = 'red';
+  color2 = 'green';
   constructor() { }
 
   ngOnInit() {
