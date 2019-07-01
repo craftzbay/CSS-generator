@@ -1,43 +1,39 @@
-<div class="jumbotron text-center" [style.background-image]="'linear-gradient(' + 'to right' + ',' + this.color1 + ',' + this.color2 + ')'">
-    <h1 class="display-5">CSS3 Gradient Generator</h1>
-    <p class="lead">{{color1}} {{color2}}</p>
+<div class="jumbotron text-center">
+    <div class="overlay"
+        [style.background-image]="'linear-gradient(' + 'to right' + ',' + this.color1 + ',' + this.color2 + ')'">
+
+    </div>
+
     <div class="jumbotron-content">
+        <h1 class="display-5">CSS3 Gradient Generator</h1>
+        <p class="lead">{{color1}} {{color2}}</p>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-lg-2">
                     <div class="form-group">
-                        <input name="color1" class="form-control"  
-                        [(colorPicker)]="color1"
-                        [style.background]="color1"
-                        [cpAlphaChannel]="'always'"
-                        [cpOutputFormat]="'hex'"
-                        [cpPresetColors]="['#7b1fa2','#039be5','ff5252','#d32f2f','#283593']"
-                        [value]="color1"
-                        >
+                        <input name="color1" class="form-control" [(colorPicker)]="color1" [style.background]="color1"
+                            [cpAlphaChannel]="'always'" [cpOutputFormat]="'hex'"
+                            [cpPresetColors]="['#7b1fa2','#039be5','ff5252','#d32f2f','#283593']" [value]="color1">
                     </div>
                 </div>
                 <div class="col col-lg-2">
                     <div class="form-group">
-                        <input name="color2" class="form-control" 
-                        [(colorPicker)]="color2"
-                        [style.background]="color2"
-                        [cpAlphaChannel]="'always'"
-                        [cpOutputFormat]="'hex'"
-                        [cpPresetColors]="['#7b1fa2','#039be5','ff5252','#d32f2f','#283593']"
-                        [value]="color2"
-                        >
+                        <input name="color2" class="form-control" [(colorPicker)]="color2" [style.background]="color2"
+                            [cpAlphaChannel]="'always'" [cpOutputFormat]="'hex'"
+                            [cpPresetColors]="['#7b1fa2','#039be5','ff5252','#d32f2f','#283593']" [value]="color2">
                     </div>
                 </div>
             </div>
         </div>
-
+        <hr class="my-4">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, eaque quis deleniti officia nam quos
+            exercitationem recusandae laborum rem atque delectus non maxime est vel aliquid, neque consequatur corporis
+            ut.
+        </p>
+        <p class="lead">
+            <a href="#" class="btn btn-primary">Learn more</a>
+        </p>
 
     </div>
-    <hr class="my-4">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, eaque quis deleniti officia nam quos
-        exercitationem recusandae laborum rem atque delectus non maxime est vel aliquid, neque consequatur corporis ut.
-    </p>
-    <p class="lead">
-        <a href="#" class="btn btn-primary">Learn more</a>
-    </p>
+
 </div>
