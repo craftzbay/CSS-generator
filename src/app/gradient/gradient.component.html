@@ -1,20 +1,31 @@
-<div class="jumbotron text-center" [style.background-color]="this.color1">
-    <h1 class="display-4">CSS3 Gradient Generator</h1>
-    <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni nam atque enim temporibus! Quidem
-        hic molestiae corporis possimus aut doloribus voluptates vel enim iusto earum aperiam, officiis tempore? Ipsum,
-        praesentium?</p>
-    <p>{{color1}}</p>
+<div class="jumbotron text-center" [style.background-image]="'linear-gradient(' + 'to right' + ',' + this.color1 + ',' + this.color2 + ')'">
+    <h1 class="display-5">CSS3 Gradient Generator</h1>
+    <p class="lead">{{color1}} {{color2}}</p>
     <div class="jumbotron-content">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-lg-2">
                     <div class="form-group">
-                        <input [(colorPicker)]="color1" name="color1" class="form-control" [style.background]="color1">
+                        <input name="color1" class="form-control"  
+                        [(colorPicker)]="color1"
+                        [style.background]="color1"
+                        [cpAlphaChannel]="'always'"
+                        [cpOutputFormat]="'hex'"
+                        [cpPresetColors]="['#7b1fa2','#039be5','ff5252','#d32f2f','#283593']"
+                        [value]="color1"
+                        >
                     </div>
                 </div>
                 <div class="col col-lg-2">
                     <div class="form-group">
-                        <input [(colorPicker)]="color2" name="color2" class="form-control" [style.background]="color2">
+                        <input name="color2" class="form-control" 
+                        [(colorPicker)]="color2"
+                        [style.background]="color2"
+                        [cpAlphaChannel]="'always'"
+                        [cpOutputFormat]="'hex'"
+                        [cpPresetColors]="['#7b1fa2','#039be5','ff5252','#d32f2f','#283593']"
+                        [value]="color2"
+                        >
                     </div>
                 </div>
             </div>
