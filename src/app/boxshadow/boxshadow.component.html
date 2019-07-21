@@ -1,1 +1,37 @@
-<p>boxshadow works!</p>
+<div class="jumbotron text-center">
+    <div class="jumbotron-content">
+        <h1 class="display-5" [style.text-shadow]="this.horizantal + 'px ' + this.vertical + 'px ' + this.blur + 'px ' + this.color">Box Shadow Generator</h1>
+        <div class="row justify-content-md-center">
+            <div class="box" [style.box-shadow] = "this.horizantal+'px '+this.vertical+'px '+this.blur+'px '+this.spread+'px '+this.color">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="horizantal">Horizantal</label>
+                        <input type="number" class="form-control" id="Horizantal" [(ngModel)]="horizantal">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="vertical">Vertical</label>
+                        <input type="number" class="form-control" id="Vertical" [(ngModel)]="vertical">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="blur">Blur</label>
+                        <input type="number" class="form-control" id="blur" [(ngModel)]="blur">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="spread">Spread</label>
+                        <input type="number" class="form-control" id="spread" [(ngModel)]="spread">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input name="color" class="form-control" [(colorPicker)]="color"
+                    [cpAlphaChannel]="'always'" [cpPosition]="'top'" [cpOutputFormat]="'hex'" [cpPresetColors]="['#7b1fa2','#039be5', 'ff5252', '#d32f2f','#283593' ]" [value]="color" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <pre>
+    <code class=" language-css" innerHTML="<span class='token property'>box-shadow</span> <span class='token punctuation'>:</span> {{this.horizantal}}px {{this.vertical}}px {{this.blur}}px {{this.spread}}px {{this.color}}"></code></pre>
+</div>

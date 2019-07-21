@@ -1,0 +1,12 @@
+.box{
+    background: #fff;
+    height: 250px;
+    width: 400px;
+    padding: 20px 30px;
+    border-radius: 3px;
+    border: none;
+    color: #544f4fff;
+}
+h1{
+    color: #fff;
+}
