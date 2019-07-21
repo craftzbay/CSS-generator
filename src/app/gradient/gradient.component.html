@@ -1,58 +1,129 @@
 <div class="jumbotron text-center">
-    <div class="overlay"
-        [style.background-image]="'linear-gradient(' + this.direction + ',' + this.color1 + ',' + this.color2 + ')'">
+  <div class="overlay" [style.background-image]=" 'linear-gradient(' + this.direction + ',' + this.color1 + ',' +
+      this.color2 + ')'"></div>
 
-    </div>
-
-    <div class="jumbotron-content">
-        <h1 class="display-5 mt-5">CSS3 Gradient Generator</h1>
-        <p class="lead">{{color1}} {{color2}}</p>
-        <div class="direction">
-            <div class="container mb-4">
-                <div class="row justify-content-center">
-                    <div class="col-1">
-                        <label for="left"><i class="fa fa-arrow-left"></i></label>
-                        <input type="radio" [(ngModel)]="direction" name="direction" id="left" value="to left">
-                    </div>
-                    <div class="col-1">
-                        <label for="top"><i class="fa fa-arrow-up"></i></label>
-                        <input type="radio" [(ngModel)]="direction" name="direction" id="top" value="to top">
-                    </div>
-                    <div class="col-1">
-                        <label for="bottom"><i class="fa fa-arrow-down"></i></label>
-                        <input type="radio" [(ngModel)]="direction" name="direction" id="bottom" value="to bottom">
-                    </div>
-                    <div class="col-1">
-                        <label for="right"><i class="fa fa-arrow-right"></i></label>
-                        <input type="radio" [(ngModel)]="direction" name="direction" id="right" value="to right">
-                    </div>
-                </div>
-            </div>
+  <div class="jumbotron-content">
+    <h1 class="display-5 mt-5">Gradient Generator</h1>
+    <div class="direction">
+      <div class="container mb-4">
+        <div class="row justify-content-center">
+          <div class="col-1">
+            <label for="left"
+              ><i
+                class="fa fa-arrow-left"
+                [ngClass]="{ 'select-active': arrow === 1 }"
+              ></i
+            ></label>
+            <input
+              (click)="selectArrow(1)"
+              type="radio"
+              [(ngModel)]="direction"
+              name="direction"
+              id="left"
+              value="to left"
+            />
+          </div>
+          <div class="col-1">
+            <label for="top"
+              ><i
+                class="fa fa-arrow-up"
+                [ngClass]="{ 'select-active': arrow === 2 }"
+              ></i
+            ></label>
+            <input
+              (click)="selectArrow(2)"
+              type="radio"
+              [(ngModel)]="direction"
+              name="direction"
+              id="top"
+              value="to top"
+            />
+          </div>
+          <div class="col-1">
+            <label for="bottom"
+              ><i
+                class="fa fa-arrow-down"
+                [ngClass]="{ 'select-active': arrow === 3 }"
+              ></i
+            ></label>
+            <input
+              (click)="selectArrow(3)"
+              type="radio"
+              [(ngModel)]="direction"
+              name="direction"
+              id="bottom"
+              value="to bottom"
+            />
+          </div>
+          <div class="col-1">
+            <label for="right"
+              ><i
+                class="fa fa-arrow-right"
+                [ngClass]="{ 'select-active': arrow === 4 }"
+              ></i
+            ></label>
+            <input
+              (click)="selectArrow(4)"
+              type="radio"
+              [(ngModel)]="direction"
+              name="direction"
+              id="right"
+              value="to right"
+            />
+          </div>
         </div>
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col col-lg-2">
-                    <div class="form-group">
-                        <input name="color1" class="form-control" [(colorPicker)]="color1" [style.background]="color1"
-                            [cpAlphaChannel]="'always'" [cpOutputFormat]="'hex'"
-                            [cpPresetColors]="['#7b1fa2','#039be5','ff5252','#d32f2f','#283593']" [value]="color1">
-                    </div>
-                </div>
-                <div class="col col-lg-2">
-                    <div class="form-group">
-                        <input name="color2" class="form-control" [(colorPicker)]="color2" [style.background]="color2"
-                            [cpAlphaChannel]="'always'" [cpOutputFormat]="'hex'"
-                            [cpPresetColors]="['#7b1fa2','#039be5','ff5252','#d32f2f','#283593']" [value]="color2">
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-2">
+          <div class="form-group">
+            <input
+              name="color1"
+              class="form-control"
+              [(colorPicker)]="color1"
+              [style.background]="color1"
+              [cpAlphaChannel]="'always'"
+              [cpOutputFormat]="'hex'"
+              [cpPresetColors]="[
+                '#7b1fa2',
+                '#039be5',
+                'ff5252',
+                '#d32f2f',
+                '#283593'
+              ]"
+              [value]="color1"
+            />
+          </div>
+        </div>
+        <div class="col col-lg-2">
+          <div class="form-group">
+            <input
+              name="color2"
+              class="form-control"
+              [(colorPicker)]="color2"
+              [style.background]="color2"
+              [cpAlphaChannel]="'always'"
+              [cpOutputFormat]="'hex'"
+              [cpPresetColors]="[
+                '#7b1fa2',
+                '#039be5',
+                'ff5252',
+                '#d32f2f',
+                '#283593'
+              ]"
+              [value]="color2"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="container">
-    <h3>Css code here:</h3>
-    <pre>
-        background: linear-gradient( {{this.direction}}, {{this.color1}}, {{this.color2}} );
-    </pre>
+  <pre>
+    <code class="language-css" innerHTML="<span class='token property'>background</span><span class='token punctuation'>:</span> <span class='token function'>linear-gradient</span><span class='token punctuation'>(</span> {{this.direction}}<span class='token punctuation'>,</span> {{this.color1}}<span class='token punctuation'>,</span> {{this.color2}} <span class='token punctuation'>)</span>
+    <span class='token property'>background</span><span class='token punctuation'>:</span> <span class='token function'>-webkit-linear-gradient</span><span class='token punctuation'>(</span> {{this.direction}}<span class='token punctuation'>,</span> {{this.color1}}<span class='token punctuation'>,</span> {{this.color2}} <span class='token punctuation'>)</span>
+    <span class='token property'>background</span><span class='token punctuation'>:</span> <span class='token function'>-moz-linear-gradient</span><span class='token punctuation'>(</span> {{this.direction}}<span class='token punctuation'>,</span> {{this.color1}}<span class='token punctuation'>,</span> {{this.color2}} <span class='token punctuation'>)</span>
+    <span class='token property'>background</span><span class='token punctuation'>:</span> <span class='token function'>-o-linear-gradient</span><span class='token punctuation'>(</span> {{this.direction}}<span class='token punctuation'>,</span> {{this.color1}}<span class='token punctuation'>,</span> {{this.color2}} <span class='token punctuation'>)</span>"></code></pre>   
 </div>
