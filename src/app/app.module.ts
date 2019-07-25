@@ -9,13 +9,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { GradientComponent } from './gradient/gradient.component';
 import { BoxshadowComponent } from './boxshadow/boxshadow.component';
 import { from } from 'rxjs';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     GradientComponent,
-    BoxshadowComponent
+    BoxshadowComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
